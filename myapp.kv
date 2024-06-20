@@ -1,0 +1,336 @@
+ScreenManager:
+    RegistrationScreen:
+        name: 'registration'
+    MenuScreen:
+        name: 'menu'
+    ProfileScreen:
+        name: 'profile'
+    AboutUsScreen:
+        name: 'about us'
+    BattlesScreen:
+        name: 'battles'
+    CalculatorScreen:
+        name: 'calculator'
+
+<RegistrationScreen>:
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(20)
+
+        MDLabel:
+            text: "Добро пожаловать в Baumans_Gate!"
+            halign: 'center'
+            theme_text_color: "Primary"
+            font_style: "H5"
+
+        MDTextFieldRound:
+            id: user
+            hint_text: "Enter username"
+            helper_text: "or click on forgot username"
+            helper_text_mode: "on_focus"
+            icon_right: "android"
+            icon_right_color: app.theme_cls.primary_color
+            pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+            size_hint_x:None
+            width:300
+
+        MDRaisedButton:
+            text: "Войти"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.switch_to_menu()
+
+        Widget:
+            size_hint_y: None
+            height: 10
+
+<MenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            id: name
+            text: "Welcome back"
+            halign: "center"
+
+        MDBottomNavigation:
+
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                text: "Profile"
+                on_tab_release: app.root.current = "profile"
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: "Calculator"
+                on_tab_release: app.root.current = "calculator"
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: "Battles"
+                on_tab_release: app.root.current = "battles"
+
+            MDBottomNavigationItem:
+                name: 'screen 4'
+                text: "About us"
+                on_tab_release: app.root.current = "about us"
+
+
+            MDBottomNavigationItem:
+                name: 'screen 5'
+                text: "Log out"
+                on_tab_release: app.root.current = "registration"
+
+
+<ProfileScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 50, 10, 10]
+        spacing: 20
+
+        Widget:
+            size_hint_y: 1
+
+        MDLabel:
+            id: profile_label
+            text: "Profile Information"
+            halign: "center"
+            font_style: "H4"
+            size_hint_y: None
+            height: self.texture_size[1]
+            valign: "middle"
+        Widget:
+            size_hint_y: 1
+
+        MDRaisedButton:
+            text: "Вернуться в меню"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.root.current = 'menu'
+        Widget:
+            size_hint_y: 1
+
+
+<AboutUsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 50, 10, 10]
+        spacing: 20
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        Widget:
+            size_hint_y: 1
+
+        MDLabel:
+            text: "Baumans_Gate"
+            halign: "center"
+            font_style: "H4"
+            size_hint_y: None
+            height: self.texture_size[1]
+            valign: "middle"
+
+        MDLabel:
+            text: "Компания Baumans_Gate занимается разработкой передовых технологий и инновационных решений в сфере информационных технологий."
+            halign: "center"
+            theme_text_color: "Secondary"
+            size_hint_y: None
+            height: self.texture_size[1]
+            valign: "middle"
+
+        Widget:
+            size_hint_y: 0.2
+
+        MDRaisedButton:
+            text: "Вернуться в меню"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.root.current = 'menu'
+
+        Widget:
+            size_hint_y: 1
+
+
+<BattlesScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 50, 10, 10]
+        spacing: 20
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        Widget:
+            size_hint_y: 1
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            size_hint_y: None
+            height: 200
+
+            MDLabel:
+                text: "semen vs microdimid"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDLabel:
+                text: "Победил: semen"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDSeparator:
+
+            MDLabel:
+                text: "vovagom vs lenchpi"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDLabel:
+                text: "Победил: vovagom"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDSeparator:
+
+            MDLabel:
+                text: "goida vs kalich"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDLabel:
+                text: "Победил: kalich"
+                halign: "center"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        Widget:
+            size_hint_y: 0.1
+
+        MDRaisedButton:
+            text: "Вернуться в меню"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.root.current = 'menu'
+
+        Widget:
+            size_hint_y: 1
+
+<CalculatorScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 50, 10, 10]
+        spacing: 20
+
+        Widget:
+            size_hint_y: 0.2
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: 44
+
+            MDLabel:
+                text: "Unit 1"
+                size_hint_x: None
+                width: 100
+                halign: 'right'
+
+            MDDropDownItem:
+                id: unit1
+                text: "Select unit"
+                size_hint_x: None
+                width: 200
+                pos_hint: {"center_x": 0.5}
+                on_release: app.open_dropdown(self)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: 44
+
+            MDLabel:
+                text: "Unit 2"
+                size_hint_x: None
+                width: 100
+                halign: 'right'
+
+            MDDropDownItem:
+                id: unit2
+                text: "Select unit"
+                size_hint_x: None
+                width: 200
+                pos_hint: {"center_x": 0.5}
+                on_release: app.open_dropdown(self)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: 44
+
+            MDLabel:
+                text: "Unit 3"
+                size_hint_x: None
+                width: 100
+                halign: 'right'
+
+            MDDropDownItem:
+                id: unit3
+                text: "Select unit"
+                size_hint_x: None
+                width: 200
+                pos_hint: {"center_x": 0.5}
+                on_release: app.open_dropdown(self)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            height: 44
+
+            MDLabel:
+                text: "Unit 4"
+                size_hint_x: None
+                width: 100
+                halign: 'right'
+
+            MDDropDownItem:
+                id: unit4
+                text: "Select unit"
+                size_hint_x: None
+                width: 200
+                pos_hint: {"center_x": 0.5}
+                on_release: app.open_dropdown(self)
+
+        Widget:
+            size_hint_y: 0.1
+
+        MDRaisedButton:
+            text: "Просчитать"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.calculate_cost()
+
+        MDRaisedButton:
+            text: "Вернуться в меню"
+            size_hint: None, None
+            size: dp(100), dp(48)
+            pos_hint: {"center_x": 0.5}
+            on_release: app.root.current = 'menu'
+
+        Widget:
+            size_hint_y: 0.2
